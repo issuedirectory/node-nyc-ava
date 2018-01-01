@@ -1,6 +1,6 @@
 FROM node:8
 
 RUN echo "Caching NPM files" \
-  && npm cache nyc \
-  && npm cache ava \
+  && npm cache add nyc \
+  && npm cache add ava \
   echo "Finished caching files."
