@@ -6,6 +6,20 @@ RUN echo "Caching NPM files" \
   && npm cache add ava \
 <% } -%>
 <% if (full) { -%>
+<%   if(source === "alpine") { -%>
+  && apk add --no-cache \
+<%   } -%>
+<%   if(source === "jessie") { -%>
+  && apt-get update \
+  && apt-get install -y \
+<%   } -%>
+<%# standard dependencies needed for building packages: -%>
+    make gcc g++ python \
+<%# 'git' is needed for some bower installs: -%>
+    git \
+<%   if(source === "jessie") { -%>
+  && rm -rf /var/lib/apt/lists/* \
+<%   } -%>
   && npm cache add bower \
   && npm cache add sinon \
   && npm cache add express \

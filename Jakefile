@@ -14,6 +14,7 @@ rule(dockerfile, () => "template.ejs", { async: true }, async function() {
   const template = await fs.readFile(path.join(__dirname, "template.ejs"), "utf8");
   await fs.ensureDir(path.dirname(path.join(__dirname, this.name)));
   await fs.writeFile(path.join(__dirname, this.name), ejs.render( template, {
+    source,
     FROM: FROM[source](version),
     standard: true,
     full: type === "full",
