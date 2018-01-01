@@ -1,0 +1,26 @@
+{
+  "name": "node-nyc-ava",
+  "version": "0.0.0",
+  "description": "Docker image with nyc and AVA cached",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "jake"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/issuedirectory/node-nyc-ava.git"
+  },
+  "author": "Ryan Leonard (http://ryanleonard.us)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/issuedirectory/node-nyc-ava/issues"
+  },
+  "homepage": "https://github.com/issuedirectory/node-nyc-ava#readme",
+  "private": true,
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "fs-extra": "^5.0.0",
+    "jake": "^8.0.15"
+  }
+}

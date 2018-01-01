@@ -1,0 +1,13 @@
+FROM <%= FROM %>
+
+RUN echo "Caching NPM files" \
+<% if (standard) { -%>
+  && npm cache nyc \
+  && npm cache ava \
+<% } -%>
+<% if (full) { -%>
+  && npm cache bower \
+  && npm cache sinon \
+  && npm cache express \
+<% } -%>
+  echo "Finished caching files."
