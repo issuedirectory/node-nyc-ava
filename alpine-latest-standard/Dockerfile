@@ -1,4 +1,4 @@
-FROM alpine
+FROM node:alpine
 
 RUN echo "Caching NPM files" \
   && npm cache add nyc \

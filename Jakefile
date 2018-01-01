@@ -5,7 +5,7 @@ const ejs = require("ejs");
 const dockerfile = /([a-z]+)-(latest|[0-9]+)-([a-z]+)\/Dockerfile/;
 
 const FROM = {
-  alpine: (version) => version === "latest" ? "alpine" : `node:${version}-alpine`,
+  alpine: (version) => version === "latest" ? "node:alpine" : `node:${version}-alpine`,
   jessie: (version) => `node:${version}`,
 };
 
