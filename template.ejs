@@ -1,6 +1,9 @@
 FROM <%= FROM %>
 
-RUN echo "Caching NPM files" \
+RUN echo "Node/NPM Versions:" \
+  && node -v \
+  && npm -v \
+  && echo "Caching NPM files" \
 <% if (standard) { -%>
   && npm cache add nyc \
   && npm cache add ava \
